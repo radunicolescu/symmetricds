@@ -24,3 +24,12 @@ auto.registration=true
 # SymmetricDS default port inside the container
 http.bind.address=0.0.0.0
 http.port=31415
+
+initial.load.create.first=true
+
+# Enable the capturing of DDL (Data Definition Language)
+ddl.sync.enabled=true
+
+# Tell it what to do when it sees a schema change
+# 'dispatch' sends the change to other nodes
+ddl.sync.on.any.table=true
