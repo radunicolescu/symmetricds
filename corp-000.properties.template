@@ -18,6 +18,8 @@ registration.url=
 # Replace 'your-app-name.up.railway.app' with your actual Railway domain
 sync.url=https://symmetricds-production.up.railway.app/sync/corp-000
 
+auto.registration=true
+
 # --- HTTP Settings ---
 # SymmetricDS default port inside the container
 http.bind.address=0.0.0.0
