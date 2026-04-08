@@ -2,16 +2,15 @@ FROM jumpmind/symmetricds:latest
 
 USER root
 
-# 1. Install gettext (contains envsubst)
-# SymmetricDS image is Debian-based, so we use apt
-RUN apt-get update && apt-get install -y gettext-base && rm -rf /var/lib/apt/lists/*
+# Alpine uses 'apk' instead of 'apt-get'
+# 'gettext' contains the envsubst utility
+RUN apk add --no-cache gettext
 
-# 2. Copy the template and the entrypoint script
+# Copy the template and entrypoint
 COPY corp-000.properties.template /opt/symmetric-ds/engines/
 COPY entrypoint.sh /entrypoint.sh
 
-# 3. Make the script executable
+# Ensure script is executable
 RUN chmod +x /entrypoint.sh
 
-# 4. Use our script as the starting command
 ENTRYPOINT ["/entrypoint.sh"]
