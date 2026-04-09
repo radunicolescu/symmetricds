@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Inject variables into the template
-envsubst < /opt/symmetric-ds/engines/corp-000.properties.template > /opt/symmetric-ds/engines/corp-000.properties
+envsubst < /opt/symmetric-ds/engines/000.properties.template > /opt/symmetric-ds/engines/000.properties
 
 echo "Engine file generated successfully."
 
