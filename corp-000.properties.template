@@ -16,7 +16,7 @@ registration.url=
 
 # The Public URL where your Mac can find this instance
 # Replace 'your-app-name.up.railway.app' with your actual Railway domain
-sync.url=https://symmetricds-production.up.railway.app/sync/corp-000
+sync.url=https://symmetricds-production.up.railway.app/sync/000
 
 auto.registration=true
 
