@@ -1,0 +1,38 @@
+# ==========================================
+# 1. Identity Configuration
+# ==========================================
+# The group this node belongs to (must match the 'sym_node_group' SQL)
+group.id=cloud
+
+# The unique ID for this central server
+external.id=cloud-000
+
+# ==========================================
+# 2. Database Connection (PostgreSQL)
+# ==========================================
+db.driver=org.postgresql.Driver
+db.url=jdbc:postgresql://$PGHOST:$PGPORT/$PGDATABASE
+db.user=$PGUSER
+db.password=$PGPASSWORD
+
+# ==========================================
+# 3. Network & Sync Routing
+# ==========================================
+# IMPORTANT: The registration URL is intentionally left blank. 
+# Because THIS is the central server, it does not register with anyone else.
+registration.url=
+
+# The URL where this server listens for incoming desktop app connections
+sync.url=https://symmetricds-production.up.railway.app/sync/cloud-000
+
+# ==========================================
+# 4. Central Node Permissions (Crucial)
+# ==========================================
+# Tells SymmetricDS to automatically create the empty sym_ tables when it boots
+auto.config.database=true
+
+# Tells this server it is allowed to accept incoming registrations from the desktop apps
+auto.registration=true
+
+# Tells the server to automatically send the initial data load to newly connected desktops
+auto.reload=true
