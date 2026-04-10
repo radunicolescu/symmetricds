@@ -7,7 +7,7 @@ USER root
 RUN apk add --no-cache gettext
 
 # Copy the template and entrypoint
-COPY 000.properties.template /opt/symmetric-ds/engines/
+COPY cloud-000.properties.template /opt/symmetric-ds/engines/
 COPY entrypoint.sh /entrypoint.sh
 
 # Ensure script is executable
